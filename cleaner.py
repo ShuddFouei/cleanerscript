@@ -37,8 +37,6 @@ def analyze_files_on_desktop():
 
             except Exception as e:
                 print(f"Error analyzing {file_path.name}: {e}")
-        else:
-            print(file_path.name)
 
 if __name__ == "__main__":
     analyze_files_on_desktop()
