@@ -7,7 +7,20 @@ def file_type(filepath):
     return str(filepath).split('.')[-1]
     
 
+def makeDirectories():
 
+# Create the directory
+    try:
+        os.mkdir("C:\\Users\\jotro\\Desktop\\etc")
+        os.mkdir("C:\\Users\\jotro\\Desktop\\img")
+        os.mkdir("C:\\Users\\jotro\\Desktop\\pdf")
+        os.mkdir("C:\\Users\\jotro\\Desktop\\lnk")
+        print("Directory created successfully!")
+    except FileExistsError:
+        print("Directory already exists.")
+    except OSError as e:
+        print(f"Error creating directory: {e}")
+        exit()
 
 def analyze_files_on_desktop():
     """Analyzes all files on the desktop."""
@@ -17,6 +30,9 @@ def analyze_files_on_desktop():
     lnk_path = pathlib.Path.home() / "Desktop/lnk"
     img_path = pathlib.Path.home() / "Desktop/img"
     etc_path = pathlib.Path.home() / "Desktop/etc"
+
+    os.mkdir
+
     #link_path
     for file_path in desktop_path.iterdir():
         if file_path.is_file():
@@ -39,4 +55,5 @@ def analyze_files_on_desktop():
                 print(f"Error analyzing {file_path.name}: {e}")
 
 if __name__ == "__main__":
+    makeDirectories()
     analyze_files_on_desktop()
